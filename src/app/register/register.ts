@@ -26,6 +26,7 @@ export class RegisterComponent {
       // alert(JSON.stringify(this.user, null, 2));
       Swal.fire({
         title: "successfully Registered <3",
+        text: "welcome "+ this.user.name + "!",
         icon: "success",
       });
     }
