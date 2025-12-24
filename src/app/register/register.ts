@@ -23,7 +23,6 @@ export class RegisterComponent {
   onSubmit(form: any) {
     if (form.valid) {
       console.log(this.user);
-      // alert(JSON.stringify(this.user, null, 2));
       Swal.fire({
         title: "successfully Registered <3",
         text: "welcome "+ this.user.name + "!",
