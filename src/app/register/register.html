@@ -1,0 +1,77 @@
+<form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)" novalidate>
+
+  <!-- Name -->
+  <div class="form-group">
+    <label>Name</label>
+
+    <input
+      type="text"
+      name="name"
+      required
+      minlength="3"
+      [(ngModel)]="user.name"
+      #name="ngModel"
+      [class.invalid]="name.invalid && name.touched"
+    />
+
+    <div class="error" *ngIf="name.invalid && name.touched">
+      <small *ngIf="name.errors?.['required']">Name is required</small>
+      <small *ngIf="name.errors?.['minlength']">
+        Minimum 3 characters required
+      </small>
+    </div>
+  </div>
+
+  <!-- Email -->
+  <div class="form-group">
+    <label>Email</label>
+
+    <input
+      type="email"
+      name="email"
+      required
+      email
+      [(ngModel)]="user.email"
+      #email="ngModel"
+      [class.invalid]="email.invalid && email.touched"
+    />
+
+    <div class="error" *ngIf="email.invalid && email.touched">
+      <small *ngIf="email.errors?.['required']">Email is required</small>
+      <small *ngIf="email.errors?.['email']">Invalid email format</small>
+    </div>
+  </div>
+
+  <!-- Password -->
+  <div class="form-group">
+    <label>Password</label>
+
+    <input
+      type="password"
+      name="password"
+      required
+      minlength="6"
+      appPasswordStrength
+      [(ngModel)]="user.password"
+      #password="ngModel"
+      [class.invalid]="password.invalid && password.touched"
+    />
+
+    <div class="error" *ngIf="password.invalid && password.touched">
+      <small *ngIf="password.errors?.['required']">Password is required</small>
+
+      <small *ngIf="password.errors?.['minlength']">
+        Minimum 6 characters required
+      </small>
+
+      <small *ngIf="password.errors?.['passwordStrength']">
+        {{ password.errors?.['passwordStrength'] }}
+      </small>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="registerForm.invalid">
+    Register
+  </button>
+
+</form>

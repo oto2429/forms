@@ -1,0 +1,83 @@
+form {
+  max-width: 420px;
+  margin: 40px auto;
+  padding: 25px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Input Base Style */
+input {
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 2px solid #ddd;
+  outline: none;
+  font-size: 14px;
+  transition: 0.25s ease;
+}
+
+/* Focus */
+input:focus {
+  border-color: #4c8bfd;
+  box-shadow: 0 0 6px rgba(76, 139, 253, 0.4);
+}
+
+/* Invalid field */
+input.invalid {
+  border-color: #ff4d4d;
+  background: #fff6f6;
+}
+
+/* Valid field */
+input.ng-valid.ng-touched {
+  border-color: #3cbc66;
+  background: #f4fff7;
+}
+
+/* Error Text */
+.error {
+  margin-top: 6px;
+}
+
+.error small {
+  display: block;
+  color: #ff3333;
+  font-size: 12px;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 10px;
+  background: #4c8bfd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+button:hover:not(:disabled) {
+  background: #3a6fde;
+}
+
+/* Disabled Button */
+button:disabled {
+  background: #9fb8ff;
+  cursor: not-allowed;
+}
